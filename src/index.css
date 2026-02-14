@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 260 20% 6%;
+    --foreground: 330 100% 95%;
+
+    --card: 260 20% 10%;
+    --card-foreground: 330 100% 95%;
+
+    --popover: 260 20% 10%;
+    --popover-foreground: 330 100% 95%;
+
+    --primary: 340 90% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 30% 18%;
+    --secondary-foreground: 330 100% 90%;
+
+    --muted: 260 20% 14%;
+    --muted-foreground: 260 10% 55%;
+
+    --accent: 340 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 18%;
+    --input: 260 20% 18%;
+    --ring: 340 90% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 260 20% 8%;
+    --sidebar-foreground: 330 100% 95%;
+    --sidebar-primary: 340 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 18%;
+    --sidebar-accent-foreground: 330 100% 90%;
+    --sidebar-border: 260 20% 18%;
+    --sidebar-ring: 340 90% 55%;
+
+    /* Custom tokens */
+    --neon-pink: 340 90% 55%;
+    --neon-red: 0 85% 55%;
+    --neon-purple: 280 80% 55%;
+    --glow-pink: 340 100% 65%;
+    --gradient-romance: linear-gradient(135deg, hsl(340 90% 55%), hsl(0 85% 55%));
+    --gradient-card: linear-gradient(135deg, hsl(260 20% 12%), hsl(260 30% 16%));
+    --shadow-neon: 0 0 20px hsl(340 90% 55% / 0.3), 0 0 40px hsl(340 90% 55% / 0.1);
+    --shadow-neon-strong: 0 0 30px hsl(340 90% 55% / 0.5), 0 0 60px hsl(340 90% 55% / 0.2);
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-romance);
+  }
+
+  .bg-gradient-romance {
+    background-image: var(--gradient-romance);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .shadow-neon-strong {
+    box-shadow: var(--shadow-neon-strong);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px hsl(340 90% 55% / 0.6), 0 0 30px hsl(340 90% 55% / 0.3);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: var(--shadow-neon); }
+  50% { box-shadow: var(--shadow-neon-strong); }
+}
