@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import FloatingHearts from "@/components/FloatingHearts";
 
-const ADMIN_PASSWORD = "matchmatrix2025";
+const ADMIN_PASSWORD = "matchmatrix2026"  ;
 
 interface Participant {
   id: string;
